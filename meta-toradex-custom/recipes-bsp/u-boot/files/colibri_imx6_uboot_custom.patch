@@ -1,0 +1,11 @@
+--- a/include/configs/colibri_imx6.h	2017-11-15 18:03:20.932784956 +0800
++++ b/include/configs/colibri_imx6.h	2017-10-10 13:56:17.566908233 +0800
+@@ -259,7 +259,7 @@
+ 		"load ${interface} ${drive}:1 ${loadaddr} flash_blk.img && " \
+ 		"source ${loadaddr}\0" \
+ 	"splashpos=m,m\0" \
+-	"vidargs=video=mxcfb0:dev=lcd,640x480M@60,if=RGB666 " \
++	"vidargs=video=mxcfb0:dev=lcd,1024x768M@60,if=RGB666 " \
+ 		"video=mxcfb1:off fbmem=8M\0 "
+ 
+ /* Miscellaneous configurable options */

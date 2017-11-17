@@ -1,0 +1,31 @@
+--- ../../../meta-toradex-demos/recipes-images/images/files/colibri-imx6/update.sh	2017-07-21 16:32:21.108726338 +0800
++++ files/colibri-imx6-custom/update.sh	2017-11-14 17:24:11.608696405 +0800
+@@ -99,7 +99,7 @@
+ 			CNT=`grep -ic "Colibri.iMX6" rootfs/etc/issue || true`
+ 			if [ "$CNT" -ge 1 ] ; then
+ 				echo "Colibri iMX6 rootfs detected"
+-				MODTYPE=colibri-imx6
++				MODTYPE=colibri-imx6-custom
+ 			else
+ 				CNT=`grep -ic "imx6" rootfs/etc/issue || true`
+ 				if [ "$CNT" -ge 1 ] ; then
+@@ -119,8 +119,8 @@
+ 	1)	MODTYPE=apalis-imx6
+ 		echo "Apalis iMX6 rootfs specified"
+ 		;;
+-	2)	MODTYPE=colibri-imx6
+-		echo "Colibri iMX6 rootfs specified"
++	2)	MODTYPE=colibri-imx6-custom
++		echo "Colibri iMX6 Custom rootfs specified"
+ 		;;
+ 	*)	echo "-m paramter specifies an unknown value"
+ 		exit 1
+@@ -137,7 +137,7 @@
+ 		LOCPATH="imx_flash"
+ 		OUT_DIR="$OUT_DIR/apalis_imx6"
+ 		;;
+-	"colibri-imx6")
++	"colibri-imx6-custom")
+ 		# assumed minimal eMMC size [in sectors of 512]
+ 		EMMC_SIZE=$(expr 1024 \* 3500 \* 2)
+ 		IMAGEFILE=root.ext3
